@@ -1,11 +1,11 @@
 // Calls the tick function of every component in every active system.
 function tickComponents(dt){
-    for(var system of systems){
+    for(var system of systems.values()){
         if(!system.active){
             continue;
         }
         for(var component of system.components){
-            component.tickFunction(dt);
+            component.tickFunction(system, dt);
         }
     }
 }

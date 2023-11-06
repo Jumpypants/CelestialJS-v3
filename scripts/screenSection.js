@@ -1,9 +1,11 @@
 class ScreenSection {
-    constructor(pos, scale, camera, scene, renderer){
+    constructor(pos, scale, rotation, camera, scene, renderer){
         // A 2d vector representing the position of center of the screen section on the screen (in pixels).
         this.pos = pos;
         // A 2d vector representing the scale of the screen section from scene units to pixels.
         this.scale = scale;
+        // The rotation of the section on the screen.
+        this.rotation = rotation;
         // A pointer to the camera being used as a perspective to draw the scene.
         this.camera = camera;
         // The scene that is being rendered.
@@ -20,10 +22,12 @@ class ScreenSection {
         ctx.translate(this.pos.x, this.pos.y);
         // Scale.
         ctx.scale(this.scale.x, this.scale.y);
+        // Rotate.
+        ctx.rotate(this.rotation);
 
         // Clear the area on the canvas.
-        ctx.fillStyle = "white";
-        ctx.fillRect(-this.camera.size.x / 2, - this.camera.size.y / 2, camera.size.x, camera.size.y);
+        ctx.fillStyle = "black";
+        ctx.fillRect(-this.camera.size.x / 2, - this.camera.size.y / 2, this.camera.size.x, this.camera.size.y);
         // Clip the canvas to create boundries.
         var region = new Path2D();
         region.rect(
@@ -33,7 +37,6 @@ class ScreenSection {
             this.camera.size.y
         );
         ctx.clip(region, "evenodd");
-        ctx.stroke();
 
         // Translate to the camera's position in the scene.
         ctx.translate(-this.camera.pos.x, - this.camera.pos.y);
