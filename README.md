@@ -17,7 +17,7 @@ Every area or “level” in a game is represented by a scene instance. Each sce
 
 * **1.1.1 | Entities**
 
-        Almost everything that is displayed on the screen is an entity. Every “object” in the game is represented by an entity. Each entity has a 2d position in its layer, a rotation in its layer, a 2d size, and an image. An entity cannot be in more than one layer, but the user can create sub classes of the entity class if they want to use a certain type of entity more than once in the game.
+    Almost everything that is displayed on the screen is an entity. Every “object” in the game is represented by an entity. Each entity has a 2d position in its layer, a rotation in its layer, a 2d size, and an image. An entity cannot be in more than one layer, but the user can create sub classes of the entity class if they want to use a certain type of entity more than once in the game.
 
 * **1.2 | Cameras**
 
