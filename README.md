@@ -3,7 +3,7 @@
 CelestialJS is a game engine for two dimensional browser games. The game engine is written in pure javascript and makes it much easier for a user to create javascript games.
 
 
-# **Requirements**
+## **Requirements**
 
 **1 | Scenes**
 
@@ -54,7 +54,7 @@ An instance of the screen class represents a state that the player’s screen ca
 
 
 
-# **Design**
+## **Design**
 
 **Scenes**
 
