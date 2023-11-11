@@ -50,7 +50,7 @@ An instance of the screen class represents a state that the player’s screen ca
 
 * **3.1.1 | Renderers**
 
-        A renderer is a function that ultimately takes all of the properties of a screen section, and uses them to draw the scene onto the screen. The renderer function of each screen section is called every frame (an infinite loop). The game engine has a built in renderer that can be used, but the user can create their own renderer to fit their game’s needs. 
+    A renderer is a function that ultimately takes all of the properties of a screen section, and uses them to draw the scene onto the screen. The renderer function of each screen section is called every frame (an infinite loop). The game engine has a built in renderer that can be used, but the user can create their own renderer to fit their game’s needs. 
 
 
 
