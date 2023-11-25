@@ -11,5 +11,6 @@ systems.set("player system", new System([cam1, player], [new Component(function(
 })]));
 
 systems.get("player system").activate();
+console.log(systems.get("player system").getAll());
 
 init();
