@@ -11,3 +11,9 @@ function tickComponents(dt){
 }
 
 function tick(dt){}
+
+function setIfUndefined(obj, prop, value){
+    if (obj[prop] === undefined) {
+        obj[prop] = value;
+    }
+}
