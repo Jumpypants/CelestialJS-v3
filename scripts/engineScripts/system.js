@@ -1,10 +1,12 @@
 class System {
-    constructor(parts, components, activate){
+    constructor(parts, components, activate, tags){
         this.isSystem = true;
         // An array of pointers for entities and other systems representing the parts of the system.
         this.parts = parts;
         // An array of the components affecting the system.
         this.components = components;
+        // The list of tags (strings) that the system has.
+        this.tags = tags;
         // A boolean representing whether or not the system is active.
         this.active = false;
         if(activate){
@@ -37,5 +39,14 @@ class System {
             }
         }
         return allEntites;
+    }
+
+    hasTag(t){
+        for(var tag of this.tags){
+            if (tag == t){
+                return true;
+            }
+        }
+        return false;
     }
 }

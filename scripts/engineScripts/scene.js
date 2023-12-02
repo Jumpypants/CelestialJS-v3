@@ -4,5 +4,6 @@ class Scene {
         this.layers = layers;
         // The cameras in the scene.
         this.cameras = cameras;
+        console.log("cameras", this.cameras)
     }
 }
