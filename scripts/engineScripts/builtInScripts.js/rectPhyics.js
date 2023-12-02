@@ -72,24 +72,24 @@ function collision(sideEntity, cornerEntity, side, corner){
     cornerEntity.vel = multV2S(collisionNormal, impulse / cornerEntity.mass);
 }
 
-var block1 = new Entity(new V2(0, 0), new V2(1, Math.sqrt(3)), Math.PI / 6, null);
-block1.vel = new V2(0, 100);
-block1.mass = 1;
-block1.elasticity = 1;
-block1.rotationVel = 0;
-var block2 = new Entity(new V2(0, 2), new V2(2, 2), 0, null);
-block2.vel = new V2(0, 0);
-block2.mass = 1;
-block2.elasticity = 1;
-block2.rotationVel = 0;
+// var block1 = new Entity(new V2(0, 0), new V2(1, Math.sqrt(3)), Math.PI / 6, null);
+// block1.vel = new V2(0, 100);
+// block1.mass = 1;
+// block1.elasticity = 1;
+// block1.rotationVel = 0;
+// var block2 = new Entity(new V2(0, 2), new V2(2, 2), 0, null);
+// block2.vel = new V2(0, 0);
+// block2.mass = 1;
+// block2.elasticity = 1;
+// block2.rotationVel = 0;
 
-console.log("before");
-console.log(JSON.stringify(block1));
-console.log(JSON.stringify(block2));
-collision(block2, block1, 2, 1);
-console.log('after');
-console.log(JSON.stringify(block1));
-console.log(JSON.stringify(block2));
+// console.log("before");
+// console.log(JSON.stringify(block1));
+// console.log(JSON.stringify(block2));
+// collision(block2, block1, 2, 1);
+// console.log('after');
+// console.log(JSON.stringify(block1));
+// console.log(JSON.stringify(block2));
 
 function findCollisionNormal(sideEntity, side){
     switch(side){

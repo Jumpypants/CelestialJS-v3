@@ -12,7 +12,6 @@ class Entity {
         this.imageSection = null;
 
         // The names of the systems that the entity should be added to by default.
-        this.defaultSystems = defaultSystems;
         for(var s of defaultSystems){
             systems.get(s).parts.push(this);
         }
