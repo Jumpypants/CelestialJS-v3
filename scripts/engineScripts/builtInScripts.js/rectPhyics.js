@@ -9,6 +9,7 @@ class RectPhyicsComponent extends Component {
                     setIfUndefined(e, "elasticity", 0.01);
                     setIfUndefined(e, "positionIsStatic", false);
                     setIfUndefined(e, "rotationIsStatic", false);
+                    setIfUndefined(e, "hitBox", {pos: new V2(0, 0), size: e.size});
                 }
             },
             (system, dt) => {

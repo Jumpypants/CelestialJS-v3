@@ -18,12 +18,16 @@ class Entity {
     }
 
     draw(){
+        ctx.save();
+        ctx.scale(1, -1);
         if(this.image == null){
             ctx.fillStyle = "red";
             ctx.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
         } else if(this.imageSection == null){
             ctx.drawImage(this.image, -this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
         } else {
+            ctx.fillStyle = "red";
+            ctx.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
             ctx.drawImage(this.image,
                 this.imageSection.pos.x,
                 this.imageSection.pos.y,
@@ -31,7 +35,8 @@ class Entity {
                 this.imageSection.size.y,
                 -this.size.x / 2,
                 -this.size.y / 2,
-                this.size.x, this.size.y);
+                this.size.x * 1, this.size.y * 1);
         }
+        ctx.restore();
     }
 }
