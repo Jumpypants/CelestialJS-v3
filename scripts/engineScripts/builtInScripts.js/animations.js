@@ -4,27 +4,38 @@ class AnimationsComponent extends Component{
             function(system){
                 for(var part of system.getAll()){
                     setIfUndefined(part, "animations", [new Animation()]);
+                    setIfUndefined(part, "currentAnimation", 0);
                 }
             },
             function(system, dt){
-
+                for(var part of system.getAll()){
+                    part.image = part.animations[currentAnimation].image;
+                    part.animations[currentAnimation].tick();
+                }
             }
         );
     }
 }
 
 class Animation {
-    constructor(image, frameSize, numFrames, dir, offset, fps, loop){
+    constructor(entity, image, frameSize, numFrames, offset, frameRepeat, loop){
+        this.entity = entity;
         this.image = image;
         this.frameSize = frameSize;
         this.numFrames = numFrames;
-        this.dir = dir;
         this.offset = offset;
-        this.fps = fps;
+        this.frameRepeat = frameRepeat;
         this.loop = loop;
+
+        this.currentFrame = 0;
     }
 
-    tick(entity, dt){
-        
+    tick(){
+        var index = Math.floor(this.currentFrame / this.frameRepeat);
+        this.entity.imageSection = {pos: new V2(this.frameSize.x * (index + startFrame), 0), size: this.frameSize};
+
+        if(index + 1 == this.numFrames * this.frameRepeat && this.loop){
+            index = 0;
+        }
     }
 }

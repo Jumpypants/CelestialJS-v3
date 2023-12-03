@@ -16,4 +16,22 @@ class Entity {
             systems.get(s).parts.push(this);
         }
     }
+
+    draw(){
+        if(this.image == null){
+            ctx.fillStyle = "red";
+            ctx.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
+        } else if(this.imageSection == null){
+            ctx.drawImage(this.image, -this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
+        } else {
+            ctx.drawImage(this.image,
+                this.imageSection.pos.x,
+                this.imageSection.pos.y,
+                this.imageSection.size.x,
+                this.imageSection.size.y,
+                -this.size.x / 2,
+                -this.size.y / 2,
+                this.size.x, this.size.y);
+        }
+    }
 }

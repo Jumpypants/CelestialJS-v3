@@ -21,7 +21,7 @@ class ScreenSection {
         // Move to the position of the screen section.
         ctx.translate(this.pos.x, this.pos.y);
         // Scale.
-        ctx.scale(this.scale.x, this.scale.y);
+        ctx.scale(this.scale.x, -this.scale.y);
         // Rotate.
         ctx.rotate(this.rotation);
 

@@ -6,11 +6,15 @@ screens.set("screen1", new Screen([new ScreenSection(new V2(300, 300), new V2(1,
 systems.set("player system", new System([player], [new Component(function(system){}, function(system, dt){
     for(var part of system.parts){
         part.pos.x += 10 * dt;
+        part.pos.y += 10 * dt;
+        part.rotation += 2 * Math.PI * dt;
     }
 
 })]));
 
 systems.get("player system").activate();
 console.log(systems.get("player system").getAll());
+
+FPS = 60;
 
 init();
