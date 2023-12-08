@@ -26,8 +26,6 @@ class Entity {
         } else if(this.imageSection == null){
             ctx.drawImage(this.image, -this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
         } else {
-            ctx.fillStyle = "red";
-            ctx.fillRect(-this.size.x / 2, -this.size.y / 2, this.size.x, this.size.y);
             ctx.drawImage(this.image,
                 this.imageSection.pos.x,
                 this.imageSection.pos.y,

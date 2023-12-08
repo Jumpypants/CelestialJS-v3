@@ -17,3 +17,9 @@ function setIfUndefined(obj, prop, value){
         obj[prop] = value;
     }
 }
+
+function fitScreenSectionToRect(camera, screenSection, size){
+    var xScale = size.x / camera.size.x;
+    camera.size.y = size.y / xScale;
+    screenSection.scale = new V2(xScale, xScale);
+}
